@@ -1,0 +1,67 @@
+@use './theme';
+
+.container,
+.row {
+  gap: 5px;
+}
+
+.cell {
+  @include theme.variables;
+
+  font-family: Arial, sans-serif;
+  font-size: 75%;
+  font-weight: bold;
+  box-sizing: border-box;
+  width: 1.67em;
+  height: 1.67em;
+  border-width: 2px;
+  border-style: solid;
+
+  &.light {
+    border-color: #ddd;
+  }
+
+  &.dark {
+    border-color: #333;
+  }
+
+  &.correct {
+    background: var(--correct);
+  }
+
+  &.present {
+    background: var(--present);
+  }
+
+  &.absent {
+    background: var(--absent);
+  }
+
+  &.correct,
+  &.present,
+  &.absent {
+    color: #fff;
+    border: none;
+  }
+
+  &.before-cursor {
+    &.light {
+      border-color: #999;
+    }
+
+    &.dark {
+      border-color: #555;
+    }
+  }
+
+  &.at-cursor,
+  &.after-cursor {
+    &.light {
+      color: #888;
+    }
+
+    &.dark {
+      color: #555;
+    }
+  }
+}

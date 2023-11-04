@@ -1,0 +1,65 @@
+// Scale font size based on viewport width
+// $x1: min viewport width
+// $y1: min font size
+// $x2: max viewport width
+// $y2: max font size
+@function scale($x1, $y1, $x2, $y2) {
+  $a: calc(($y2 - $y1) / ($x2 - $x1));
+  $b: calc($y1 - $a * $x1);
+  @return clamp($y1, $a * 100vw + $b, $y2);
+}
+
+.container {
+  font-family: Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: auto;
+  font-size: scale(320px, 16px, 720px, 32px);
+
+  &.light {
+    color-scheme: light;
+    color: #333;
+    background: #fff;
+  }
+
+  &.dark {
+    color-scheme: dark;
+    color: #ddd;
+    background: #111;
+  }
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+
+  .left,
+  .right {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+    gap: 12px;
+  }
+
+  .right {
+    justify-content: flex-end;
+  }
+
+  .logo {
+    font-size: 150%;
+    text-decoration: none;
+  }
+}
+
+.main {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}

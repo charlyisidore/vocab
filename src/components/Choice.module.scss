@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  gap: 12px;
+
+  &.horizontal {
+    flex-direction: row;
+  }
+
+  &.vertical {
+    flex-direction: column;
+  }
+}
+
+.option {
+  flex-grow: 1;
+  flex-basis: 0;
+}

@@ -1,0 +1,46 @@
+.container {
+  --elevation: 0;
+  font-family: inherit;
+  font-size: inherit;
+  text-transform: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 12px;
+  cursor: pointer;
+  border: 3px solid var(--border-color);
+  box-shadow: 0 var(--elevation) var(--border-color);
+  transform: translateY(calc(-1 * var(--elevation)));
+  transition-property: box-shadow, transform;
+  transition-duration: 0.1s;
+
+  &.light {
+    color: #333;
+    background: #fff;
+    --border-color: #ddd;
+  }
+
+  &.dark {
+    color: #ddd;
+    background: #111;
+    --border-color: #444;
+  }
+
+  &:hover,
+  &.hover {
+    --elevation: 3px;
+  }
+
+  &:active,
+  &.active {
+    --elevation: 0;
+  }
+
+  &:hover,
+  &.hover,
+  &:active,
+  &.active {
+    --border-color: currentColor;
+  }
+}

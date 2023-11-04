@@ -1,0 +1,51 @@
+@use './theme';
+
+.container,
+.row {
+  gap: 3px;
+}
+
+.cell {
+  @include theme.variables;
+
+  font-family: Arial, sans-serif;
+  font-size: 100%;
+  font-weight: bold;
+  width: 1.33em;
+  height: 1.33em;
+  outline-width: 3px;
+  outline-style: solid;
+
+  &.light {
+    color: #333;
+    outline-color: #ddd;
+  }
+
+  &.dark {
+    color: #ddd;
+    outline-color: #444;
+  }
+
+  &.correct {
+    background: var(--correct);
+  }
+
+  &.present {
+    // Yellow circle
+    background: radial-gradient(
+      circle closest-side at center,
+      var(--present) 96%,
+      transparent
+    );
+  }
+
+  &.correct,
+  &.present {
+    color: #fff;
+  }
+
+  &.at-cursor,
+  &.after-cursor {
+    color: #888;
+  }
+}

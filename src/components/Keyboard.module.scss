@@ -1,0 +1,55 @@
+$gap-x: 6px;
+$gap-y: 12px;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: $gap-y $gap-x;
+  gap: $gap-y;
+  user-select: none;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: $gap-x;
+}
+
+.button,
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-basis: calc((100% - $gap-x * (var(--columns) - 1)) / var(--columns));
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  color: var(--color);
+  background: var(--background);
+  text-transform: uppercase;
+
+  &:active {
+    color: var(--background);
+    background: var(--color);
+  }
+}
+
+.light .button {
+  --color: #000;
+  --background: #ddd;
+}
+
+.dark .button {
+  --color: #fff;
+  --background: #666;
+}
+
+.Backspace,
+.Enter {
+  flex-grow: 1;
+}

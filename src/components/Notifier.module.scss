@@ -1,0 +1,53 @@
+.container {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.notification {
+  margin: 0 auto;
+  padding: 12px;
+  opacity: 0.83;
+  z-index: 1000;
+  border-width: 3px;
+  border-style: solid;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: opacity, border-color, box-shadow;
+  transition-duration: 0.1s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.light .notification {
+  color: #333;
+  background: #fff;
+  border-color: #ddd;
+  box-shadow: 0 3px #ddd;
+
+  &:hover {
+    border-color: currentColor;
+    box-shadow: 0 3px currentColor;
+  }
+}
+
+.dark .notification {
+  color: #ddd;
+  background: #111;
+  border-color: #333;
+  box-shadow: 0 3px #333;
+
+  &:hover {
+    border-color: currentColor;
+    box-shadow: 0 3px currentColor;
+  }
+}

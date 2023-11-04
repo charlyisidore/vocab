@@ -1,0 +1,22 @@
+.container {
+  box-sizing: border-box;
+  flex-basis: 24em;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  font-size: 150%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.themePreview {
+  font-size: 150%;
+}

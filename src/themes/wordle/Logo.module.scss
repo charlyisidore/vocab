@@ -1,0 +1,9 @@
+@use './theme';
+
+.container {
+  @include theme.variables;
+  --correct-color: #fff;
+  --correct-background: var(--correct);
+  --present-color: #fff;
+  --present-background: var(--present);
+}

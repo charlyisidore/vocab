@@ -1,0 +1,59 @@
+@use './theme';
+
+.container,
+.row {
+  gap: 2px;
+}
+
+.cell {
+  @include theme.variables;
+
+  font-family: Arial, sans-serif;
+  font-size: 100%;
+  font-weight: bold;
+  color: #fff;
+  width: 1.33em;
+  height: 1.33em;
+  background: var(--board);
+  outline: 2px solid var(--border);
+
+  // Improve legibility on yellow background using a shadow
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.75);
+
+  &.correct {
+    background: var(--correct);
+  }
+
+  &.present {
+    // Yellow circle
+    background: radial-gradient(
+      circle closest-side at center,
+      var(--present) 91.67%,
+      var(--board) 95.83%,
+      var(--board)
+    );
+  }
+
+  &.at-cursor,
+  &.after-cursor {
+    position: relative;
+
+    &::before {
+      content: '.';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    &.hint::before {
+      content: none;
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@use './theme';
+
+.button {
+  @include theme.variables;
+
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 92%;
+  height: 2.4em;
+
+  &.correct {
+    background: var(--correct);
+  }
+
+  &.present {
+    background: var(--present);
+  }
+
+  &.correct,
+  &.present,
+  &.absent {
+    color: #fff;
+  }
+}
+
+.light .absent {
+  background: #888;
+}
+
+.dark .absent {
+  color: #ccc;
+  background: #333;
+}

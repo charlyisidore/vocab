@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  font-size: 80%;
+}
+
+.light .label {
+  color: #666;
+}
+
+.dark .label {
+  color: #aaa;
+}

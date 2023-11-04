@@ -1,0 +1,90 @@
+@use 'sass:math';
+
+$n: 5;
+
+@mixin transforms($u, $v, $w) {
+  @for $i from 1 through $n {
+    &:nth-of-type(#{$i}) {
+      $r: math.div($i - 1, $n - 1) * math.$pi;
+      $x: calc(math.sin(4 * $r) * $u);
+      $y: calc(math.sin(2 * $r) * $v);
+      $a: calc(math.cos(2 * $r) * $w);
+      transform: translate($x, $y) rotate($a);
+    }
+  }
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat($n, calc(1em * 11 / 12));
+  place-items: center;
+  padding: calc(1em / 6) calc(1em / 3);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  user-select: none;
+}
+
+@mixin correct {
+  color: var(--correct-color);
+  background: var(--correct-background);
+  border-radius: calc(1em / 6);
+  z-index: 1;
+}
+
+@mixin present {
+  color: var(--present-color);
+  background: var(--present-background);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+@mixin present-o {
+  width: calc(1em * 5 / 6);
+  height: calc(1em * 5 / 6);
+  color: transparent;
+  background: var(--present-background);
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(1em * 6 / 5);
+  height: calc(1em * 6 / 5);
+  z-index: 4;
+
+  @at-root .light {
+    color: #000;
+  }
+
+  @at-root .dark {
+    color: #fff;
+  }
+
+  &:nth-of-type(1),
+  &:nth-last-of-type(1) {
+    @include correct;
+  }
+
+  &:nth-of-type(#{math.ceil(math.div($n, 2))}) {
+    @include present;
+  }
+
+  // Quote on last letter
+  &:nth-last-of-type(1)::after {
+    content: '’';
+    position: absolute;
+    top: 0;
+    right: 0.05em;
+  }
+
+  @include transforms(calc(1em / 12), calc(-1em / 12), -6deg);
+  transition: transform 0.2s;
+}
+
+.container:hover .letter {
+  @include transforms(calc(-1em / 12), calc(1em / 12), 6deg);
+}

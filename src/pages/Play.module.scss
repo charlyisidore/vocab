@@ -1,0 +1,29 @@
+.container {
+  box-sizing: border-box;
+  flex-basis: 24em;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.main {
+  position: relative;
+  flex-grow: 1;
+  flex-basis: 0;
+  overflow: auto;
+
+  .board {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(12em / var(--word-length, 12));
+    box-sizing: border-box;
+    min-height: 100%;
+    padding: 12px 0;
+  }
+}
+
+.footer {
+  font-size: 24px;
+}

@@ -1,0 +1,15 @@
+@mixin variables {
+  @at-root .light {
+    // Slightly brighter colors in light mode
+    --correct: #7b6;
+    --present: #db5;
+    --absent: #888;
+  }
+
+  @at-root .dark {
+    // Slightly darker colors in dark mode
+    --correct: #595;
+    --present: #ba4;
+    --absent: #444;
+  }
+}
