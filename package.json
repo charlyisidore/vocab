@@ -18,27 +18,26 @@
     "test:coverage": "vitest --coverage"
   },
   "dependencies": {
-    "@solidjs/router": "^0.8.3",
-    "solid-js": "^1.8.5"
+    "@solidjs/router": "^0.8.4",
+    "solid-js": "^1.8.7"
   },
   "devDependencies": {
-    "@solidjs/testing-library": "^0.8.4",
-    "@testing-library/jest-dom": "^6.1.4",
-    "@typescript-eslint/eslint-plugin": "^6.9.1",
-    "@typescript-eslint/parser": "^6.9.1",
+    "@solidjs/testing-library": "^0.8.5",
+    "@testing-library/jest-dom": "^6.1.6",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
     "@vitest/coverage-v8": "^0.34.6",
-    "eslint": "^8.53.0",
-    "eslint-config-prettier": "^9.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-solid": "^0.13.0",
-    "eslint-plugin-vitest": "^0.3.9",
-    "globals": "^13.23.0",
+    "eslint-plugin-vitest": "^0.3.20",
+    "globals": "^13.24.0",
     "jsdom": "^22.1.0",
-    "prettier": "^3.0.3",
+    "prettier": "^3.1.1",
     "sass": "^1.69.5",
-    "solid-devtools": "^0.27.9",
-    "typescript": "^5.2.2",
-    "vite": "^4.5.0",
-    "vite-plugin-solid": "^2.7.2",
+    "typescript": "^5.3.3",
+    "vite": "^4.5.1",
+    "vite-plugin-solid": "^2.8.0",
     "vitest": "^0.34.6"
   }
 }
