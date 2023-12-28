@@ -18,7 +18,7 @@
     "test:coverage": "vitest --coverage"
   },
   "dependencies": {
-    "@solidjs/router": "^0.8.4",
+    "@solidjs/router": "^0.10.5",
     "solid-js": "^1.8.7"
   },
   "devDependencies": {
@@ -26,18 +26,18 @@
     "@testing-library/jest-dom": "^6.1.6",
     "@typescript-eslint/eslint-plugin": "^6.16.0",
     "@typescript-eslint/parser": "^6.16.0",
-    "@vitest/coverage-v8": "^0.34.6",
+    "@vitest/coverage-v8": "^1.1.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-solid": "^0.13.0",
     "eslint-plugin-vitest": "^0.3.20",
     "globals": "^13.24.0",
-    "jsdom": "^22.1.0",
+    "jsdom": "^23.0.1",
     "prettier": "^3.1.1",
     "sass": "^1.69.5",
     "typescript": "^5.3.3",
-    "vite": "^4.5.1",
+    "vite": "^5.0.10",
     "vite-plugin-solid": "^2.8.0",
-    "vitest": "^0.34.6"
+    "vitest": "^1.1.0"
   }
 }

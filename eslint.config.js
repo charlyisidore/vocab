@@ -165,6 +165,8 @@ export default [
       // https://github.com/veritem/eslint-plugin-vitest#rules
       ...vitest.configs.all.rules,
       ...rules,
+
+      'vitest/prefer-expect-assertions': 'off',
     },
   },
   prettierConfig,
