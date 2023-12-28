@@ -1,5 +1,9 @@
 import { lazy } from 'solid-js';
-import { PlayDailyData, PlayData, PlayRandomData } from './pages/Play.data';
+import {
+  loadChallenge,
+  loadDailyChallenge,
+  loadRandomChallenge,
+} from './pages/Play.data';
 
 export default [
   {
@@ -9,17 +13,17 @@ export default [
   {
     path: '/play/daily',
     component: lazy(() => import('./pages/Play')),
-    data: PlayDailyData,
+    load: loadDailyChallenge,
   },
   {
     path: '/play/random',
     component: lazy(() => import('./pages/Play')),
-    data: PlayRandomData,
+    load: loadRandomChallenge,
   },
   {
     path: '/play/:id',
     component: lazy(() => import('./pages/Play')),
-    data: PlayData,
+    load: loadChallenge,
   },
   {
     path: '/settings',

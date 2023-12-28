@@ -1,23 +1,24 @@
 import {
+  Component,
   Suspense,
   batch,
   createEffect,
   createResource,
   createSignal,
 } from 'solid-js';
-import { useRouteData } from '@solidjs/router';
+import { createAsync } from '@solidjs/router';
 import { useAppState } from '../AppState';
 import { useColorScheme } from '../providers/color-scheme';
 import { useTranslate } from '../providers/locale';
 import { useNotify } from '../providers/notification';
 import { useStyles } from '../providers/theme';
 import {
+  type Challenge,
   fetchDictionary,
   getBoardContent,
   getBoardState,
   getKeyboardState,
 } from '../lib/game';
-import { type PlayData } from './Play.data';
 import Board from '../components/Board';
 import Keyboard from '../components/Keyboard';
 import Spinner from '../components/Spinner';
@@ -29,8 +30,8 @@ const tries = 6;
 /**
  * Game page.
  */
-const Play = () => {
-  const challenge = useRouteData<typeof PlayData>();
+const Play: Component<{ data: Promise<Challenge> }> = (props) => {
+  const challenge = createAsync(() => props.data);
   const app = useAppState();
   const colorScheme = useColorScheme();
   const styles = useStyles('Play', defaultStyles);
