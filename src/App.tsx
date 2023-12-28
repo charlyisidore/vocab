@@ -1,17 +1,16 @@
-import { A, useRoutes } from '@solidjs/router';
+import { ParentComponent } from 'solid-js';
+import { A } from '@solidjs/router';
 import { useColorScheme } from './providers/color-scheme';
 import { useStyles } from './providers/theme';
 import Logo from './components/Logo';
 import Notifier from './components/Notifier';
-import routes from './routes';
 
 import defaultStyles from './App.module.scss';
 
 /**
  * App root component.
  */
-const App = () => {
-  const Routes = useRoutes(routes);
+const App: ParentComponent = (props) => {
   const colorScheme = useColorScheme();
   const styles = useStyles('App', defaultStyles);
   return (
@@ -26,7 +25,7 @@ const App = () => {
         <div class={styles('right')} />
       </div>
       <div class={styles('main')}>
-        <Routes />
+        {props.children}
         <Notifier />
       </div>
     </div>
