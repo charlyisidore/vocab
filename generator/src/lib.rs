@@ -79,7 +79,7 @@ pub fn build(config: Config) -> anyhow::Result<()> {
     ];
 
     // Number of daily challenges to generate
-    let num_daily_challenges = 365;
+    let num_daily_challenges = 365 * 2;
 
     // Read and pre-filter the database
     let database: Vec<Record> = csv::ReaderBuilder::new()
